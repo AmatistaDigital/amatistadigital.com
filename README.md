@@ -10,6 +10,4 @@
 - Ejecutar `grunt deploy` para subir los cambios.
 
 ### ToDo:
-- Agregar menú de navegación.
-- Hacer el sitio responsive.
 - Hacer unit testing a controladores y directivas.
