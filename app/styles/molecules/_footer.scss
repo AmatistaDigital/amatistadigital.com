@@ -1,0 +1,100 @@
+.footer {
+  @include box-sizing(border-box);
+  @extend %padding-top-huge;
+
+  background      : url(../images/backgrounds/footer.png);
+  background-size : 100% 100%;
+  bottom          : 0;
+  height          : 417px;
+  position        : absolute;
+  width           : 100%;
+
+  .container {
+    position : relative;
+    height   : 100%;
+  }
+
+  .disclaimer {
+    @extend %text-center;
+    @extend %text-small;
+    @extend %text-asphalt;
+
+    bottom   : 15px;
+    position : absolute;
+    width    : 100%;
+  }
+
+  .brand {
+    @extend .sprites-brand;
+    height      : 129px;
+    text-indent : -9999px;
+    width       : 309px;
+  }
+
+  .contact {
+    background : url(../images/backgrounds/footer-contact.png) no-repeat bottom left;
+    bottom     : 0;
+    height     : 390px;
+    position   : absolute;
+    right      : 0;
+    width      : 390px;
+
+    .contact-info {
+      @extend %background-orange;
+      @extend %padding-medium;
+
+      @include border-radius(50px);
+      @include box-sizing(border-box);
+
+      padding-bottom : 30px;
+      position       : absolute;
+      top            : 0;
+      width          : 100%;
+      z-index        : 2;
+
+      &:before {
+        border-color : transparent transparent transparent getColor(orange);
+        border-style : solid;
+        border-width : 30px 0 30px 30px;
+        bottom       : -30px;
+        content      : "";
+        height       : 0px;
+        left         : 100px;
+        position     : absolute;
+        width        : 0px;
+        z-index      : 1;
+      }
+
+      .contact-title {
+        @extend %text-center;
+      }
+
+      .contact-data {
+        @extend %margin-vertical-medium;
+
+        tr td {
+          @extend %padding-bottom-x-small;
+
+          &:first-child {
+            @extend %padding-right-medium;
+            @extend %text-right;
+
+            font-weight : bold;
+          }
+        }
+      }
+
+      .btn-facebook .icon {
+        @extend .sprites-facebook;
+        height : 29px;
+        width  : 16px;
+      }
+
+      .btn-twitter .icon {
+        @extend .sprites-twitter;
+        height : 29px;
+        width  : 34px;
+      }
+    }
+  }
+}

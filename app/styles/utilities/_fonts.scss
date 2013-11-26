@@ -1,0 +1,19 @@
+@import "compass/css3/font-face";
+
+@include font-face("Sans Pro",
+  font-files(
+    "sourcesanspro-light-webfont.ttf",
+    "sourcesanspro-light-webfont.woff",
+    "sourcesanspro-light-webfont.svg#sourcesanspro-light-webfont"
+  ),
+  "sourcesanspro-light-webfont.eot", normal
+);
+
+@include font-face("Sans Pro",
+  font-files(
+    "sourcesanspro-semibold-webfont.ttf",
+    "sourcesanspro-semibold-webfont.woff",
+    "sourcesanspro-semibold-webfont.svg#sourcesanspro-semibold-webfont"
+  ),
+  "sourcesanspro-semibold-webfont.eot", bold
+);

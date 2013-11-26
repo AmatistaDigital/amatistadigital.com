@@ -1,0 +1,65 @@
+.laboratory {
+  @include box-shadow(inset rgba(0, 0, 0, .5) 0 0 50px);
+  background     : getColor(grapes) url(../images/backgrounds/laboratory.png) no-repeat center 10px;
+  padding-bottom : 475px;
+
+  .section-description {
+    @extend %margin-bottom-huge;
+    @extend %margin-top-medium;
+    @extend %text-purple-haze;
+  }
+
+  .laboratory-item {
+    @extend %margin-xx-large;
+    @include inline-block;
+
+    height   : 221px;
+    position : relative;
+    width    : 220px;
+
+    &:hover .gears {
+      .small,
+      .big {
+        @include transform(rotate(360deg));
+      }
+    }
+
+    .gears {
+      height   : 47px;
+      left     : 0;
+      position : absolute;
+      top      : 0;
+      width    : 66px;
+      z-index  : 0;
+
+      .small,
+      .big {
+        @include transition(-webkit-transform 1.5s ease);
+        position : absolute;
+      }
+
+      .small {
+        @extend .sprites-gear-small;
+        bottom : 0;
+        height : 28px;
+        left   : 0;
+        width  : 28px;
+      }
+
+      .big {
+        @extend .sprites-gear;
+        height : 42px;
+        right  : 0;
+        top    : 0;
+        width  : 42px;
+      }
+    }
+
+    .item-content {
+      background : url(../images/backgrounds/laboratory-item.png);
+      height     : 221px;
+      position   : absolute;
+      width      : 220px;
+    }
+  }
+}

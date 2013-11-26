@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Amatista Digital</title>
+    <meta name="description" content="Somos una agencia desarrolladora de sitios web interactivos y aplicaciones móviles para su negocio o empresa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut-icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- build:css({.tmp,app}) styles/screen.css -->
+    <link rel="stylesheet" href="styles/screen.css">
+    <!-- endbuild -->
+  </head>
+
+  <body ng-app="amatistadigitalApp" ng-controller="MainCtrl as main">
+
+    <!-- Sections. -->
+    <content-area ng-repeat="section in main.sections" name="section" on-visible="main.changeActiveSection(section)" on-visible-trigger="topWindow"></content-area>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/parallax/source/parallax.js"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/onVisible.js"></script>
+    <script src="scripts/controllers/Main.js"></script>
+    <script src="scripts/controllers/CreativeProcess.js"></script>
+    <script src="scripts/directives/contentArea.js"></script>
+    <script src="scripts/controllers/OurPowers.js"></script>
+    <script src="scripts/directives/parallax.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

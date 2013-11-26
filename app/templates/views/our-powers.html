@@ -1,0 +1,13 @@
+<section class="our-powers" ng-controller="OurpowersCtrl as powers">
+  <div class="container">
+    <h2 class="section-title inverse">Nuestros poderes</h2>
+  </div>
+
+  <section class="powers-list">
+    <article class="power" ng-repeat="power in powers.list">
+      <figure class="power-logo"><img ng-src="images/powers/{{ power.image }}.png" alt="{{ power.name }}"></figure>
+      <h4 class="power-name">{{ power.name }}</h4>
+      <p class="power-description">{{ power.description }}</p>
+    </article>
+  </section>
+</section>

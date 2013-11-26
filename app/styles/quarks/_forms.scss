@@ -1,0 +1,29 @@
+button, input, textarea {
+  @extend %text-asphalt;
+  @extend %text-medium;
+
+  font-family : $primary-font;
+
+  &:focus {
+    outline : none;
+  }
+}
+
+input {
+  @extend %padding-lateral-large;
+  @extend %padding-vertical-small;
+
+  @include border-radius(5px);
+  @include box-sizing(border-box);
+
+  border : 3px solid getColor(pink);
+
+  // Input sizes.
+  &.input-medium {
+    width : 300px;
+  }
+
+  &.input-large {
+    width : 380px;
+  }
+}

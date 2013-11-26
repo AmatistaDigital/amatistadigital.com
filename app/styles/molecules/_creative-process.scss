@@ -1,0 +1,99 @@
+$process-height : 1421px;
+$process-outer  : 100px;
+$process-width  : 892px;
+
+$process-end-height : 246px;
+$process-end-width  : 247px;
+
+.creative-process {
+  @extend %background-water;
+  @include box-shadow(inset rgba(0, 0, 0, .2) 0 25px 25px);
+
+  border-top     : 2px solid lighten(getColor(water), 10%);
+  height         : $process-height - $process-outer;
+  padding-bottom : 0;
+  position       : relative;
+
+  .section-title {
+    @extend %background-water;
+    position : relative;
+    z-index  : 2;
+  }
+
+  .process {
+    @include box-sizing(border-box);
+
+    background  : url(../images/backgrounds/creative-process.png) no-repeat top center;
+    height      : $process-height;
+    left        : 50%;
+    margin-left : ($process-width / 2) * -1;
+    padding-top : 240px;
+    padding-bottom : 0;
+    position    : absolute;
+    top         : -($process-outer);
+    width       : $process-width;
+
+    .process-end {
+      @include opacity(0);
+      @include transition(opacity 0.75s ease, -webkit-transform 1s ease);
+
+      bottom      : -($process-end-height / 2);
+      left        : 50%;
+      margin-left : -($process-end-width / 2);
+      position    : absolute;
+
+      &.visible {
+        @include opacity(1);
+        @include transform(rotateZ(-360deg));
+      }
+    }
+
+    .process-item {
+      @extend %text-left;
+      @extend %margin-bottom-large;
+
+      &.inverse {
+        @extend %text-right;
+      }
+
+      &.big {
+        margin : 85px 0;
+      }
+
+      &.visible {
+        .process-logo, .process-info {
+          @include opacity(1);
+        }
+
+        .process-logo {
+          @include transform(rotateY(-360deg));
+        }
+      }
+
+      .process-logo,
+      .process-info {
+        @include inline-block;
+        @include opacity(0);
+      }
+
+      &:not(.inverse) .process-logo,
+      &.inverse .process-info {
+        @extend %margin-right-xx-large;
+      }
+
+      .process-logo {
+        @include transition(opacity 0.5s ease, -webkit-transform 1s ease);
+      }
+
+      .process-info {
+        @include transition(opacity 0.5s ease 0.3s);
+        max-width : 500px;
+
+        p {
+          @extend %text-deep-sea;
+          @extend %text-large;
+        }
+      }
+    }
+  }
+}

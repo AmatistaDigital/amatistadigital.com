@@ -1,0 +1,16 @@
+.section-title {
+  @extend %border-white;
+  @extend %padding-lateral-huge;
+  @extend %padding-vertical-small;
+
+  @include border-radius(5px);
+  @include inline-block;
+
+  border-width : 2px;
+  font-size    : 3em;
+
+  &.inverse {
+    @extend %text-asphalt;
+    border-color : getColor(asphalt);
+  }
+}

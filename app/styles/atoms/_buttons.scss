@@ -1,0 +1,57 @@
+// Reset default button.
+.btn {
+  @extend %background-asphalt;
+  @extend %padding-small;
+  @extend %text-large;
+  @extend %text-white;
+
+  @include inline-block;
+  @include border-radius(5px);
+  @include box-sizing(border-box);
+  @include transition(all 0.3s ease);
+
+  border      : none;
+  cursor      : pointer;
+  font-weight : bold;
+
+  // Two consecutive buttons.
+  & + .btn {
+    @extend %margin-left-small;
+  }
+
+  // Hover effect.
+  &:hover {
+    @include border-radius(10px);
+  }
+
+  // Button colors.
+  &.btn-primary {
+    @extend %background-grapes;
+
+    &:hover {
+      background-color : darken(getColor(grapes), 5%);
+    }
+  }
+
+  &.btn-facebook {
+    @extend %background-facebook;
+
+    &:hover {
+      background-color : darken(getColor(facebook), 5%);
+    }
+  }
+
+   &.btn-twitter {
+    @extend %background-sky;
+
+    &:hover {
+      background-color : darken(getColor(sky), 5%);
+    }
+  }
+
+  // Special buttons.
+  &.btn-facebook,
+  &.btn-twitter {
+    @extend %padding-vertical-x-small;
+  }
+}

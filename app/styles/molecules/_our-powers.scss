@@ -1,0 +1,33 @@
+.our-powers {
+  @include box-shadow(inset rgba(0, 0, 0, .2) 0 25px 25px);
+  @extend %background-clouds;
+  border-top  : 2px solid lighten(getColor(clouds), 5%);
+  padding-top : 120px;
+
+  .powers-list {
+    @extend %background-orange;
+    @extend %margin-vertical-large;
+
+    @include box-shadow(rgba(0, 0, 0, .2) 0 5px 20px);
+
+    border-bottom : 2px solid lighten(getColor(clouds), 5%);
+    overflow      : hidden;
+
+    .power {
+      @extend %margin-lateral-large;
+      @extend %margin-vertical-medium;
+      @include inline-block;
+
+      vertical-align : top;
+      width          : 210px;
+
+      .power-name {
+        @extend %margin-small;
+      }
+
+      .power-description {
+        @extend %text-coffee;
+      }
+    }
+  }
+}

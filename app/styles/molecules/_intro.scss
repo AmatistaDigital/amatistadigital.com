@@ -1,0 +1,66 @@
+.page-header {
+  @extend %background-clouds;
+  @extend %padding-vertical-xx-large;
+  @extend %text-center;
+
+  .brand {
+    @extend .sprites-brand;
+    @include inline-block;
+
+    background-size : cover;
+    height      : 92px;
+    text-indent : -9999px;
+    width       : 220px;
+  }
+}
+
+.intro {
+  @extend %padding-vertical-titan;
+  @extend %text-huge;
+
+  overflow : hidden;
+  position : relative;
+
+  .intro-bg-container,
+  .intro-bg {
+    height          : 150%;
+    position        : absolute;
+    z-index         : -1;
+    width           : 150%;
+  }
+
+  .intro-bg-container {
+    left : -25%;
+    top  : -25%;
+  }
+
+  .intro-bg {
+    background : getColor(grapes) url(../images/backgrounds/intro.jpg) no-repeat center center;
+    background-size : cover;
+  }
+
+  .container {
+    &.visible .diamond,
+    &.visible .title {
+      @include opacity(1);
+    }
+
+    .diamond, .title {
+      @include opacity(0);
+    }
+
+    .diamond {
+      @extend .sprites-diamond;
+
+      @include inline-block;
+      @include transition(opacity 0.5s ease);
+
+      height : 94px;
+      width  : 100px;
+    }
+
+    .title {
+      @include transition(opacity 0.5s ease 0.3s);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+a {
+  text-decoration : inherit;
+
+  &:not(.btn) {
+    // @extend %text-belize-hole;
+
+    &:hover {
+      // @extend %text-peter-river;
+    }
+  }
+}
