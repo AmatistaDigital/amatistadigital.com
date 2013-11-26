@@ -18,13 +18,13 @@
 
     <!-- Navigation -->
     <ul class="page-navigation">
-      <li class="navigation-item" ng-repeat="section in main.sections" ng-class="{ active : main.activeSection === section.id }" ng-click="main.scrollToSection(section.id)">
+      <li class="navigation-item" ng-repeat="section in main.sections" ng-class="{ active : main.activeSection === section.id }" scroll-to="{{ section.id }}" scroll-duration="1000">
         <img ng-src="images/section-icons/{{ section.id }}.png">
       </li>
     </ul>
 
     <!-- Sections. -->
-    <content-area ng-repeat="section in main.sections" name="section.id" on-visible="main.changeActiveSection(section.id)" on-visible-trigger="topWindow"></content-area>
+    <content-area ng-repeat="section in main.sections" name="section.id" on-visible="main.activeSection = section.id" on-visible-trigger="topWindow"></content-area>
 
     <!-- Page footer. -->
     <footer class="footer">
