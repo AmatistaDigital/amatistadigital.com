@@ -48,11 +48,12 @@
 // Molecules [structures].
 // -----------------------
 // Unique elements across the page, they can combine atoms and quarks.
-@import "molecules/creative-process";
-@import "molecules/footer";
-@import "molecules/intro";
-@import "molecules/laboratory";
-@import "molecules/our-powers";
-@import "molecules/portfolio";
-@import "molecules/page-navigation";
+@import "molecules/layout/page-footer";
+@import "molecules/layout/page-header";
+@import "molecules/layout/page-navigation";
+@import "molecules/sections/creative-process";
+@import "molecules/sections/intro";
+@import "molecules/sections/laboratory";
+@import "molecules/sections/our-powers";
+@import "molecules/sections/portfolio";
 // [End molecules]

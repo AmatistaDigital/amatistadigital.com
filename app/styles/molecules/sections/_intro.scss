@@ -1,24 +1,13 @@
-.page-header {
-  @extend %background-clouds;
-  @extend %padding-vertical-xx-large;
-  @extend %text-center;
-
-  .brand {
-    @extend .sprites-brand;
-    @include inline-block;
-
-    background-size : cover;
-    height      : 92px;
-    text-indent : -9999px;
-    width       : 220px;
-  }
-}
-
 .intro {
   @extend %padding-vertical-titan;
 
   overflow : hidden;
   position : relative;
+
+  @include query($baby-bear) {
+    padding-bottom : getSpace(huge);
+    padding-top    : getSpace(huge);
+  }
 
   @include query($up-baby-bear) {
     font-size : getFontSize(large);

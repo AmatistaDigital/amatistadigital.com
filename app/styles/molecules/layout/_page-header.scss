@@ -1,0 +1,28 @@
+$brand-height : 92px;
+$brand-width  : 220px;
+
+.page-header {
+  @extend %background-clouds;
+  @extend %padding-vertical-xx-large;
+  @extend %text-center;
+
+  @include query($baby-bear) {
+    padding-bottom : getSpace(medium);
+    padding-top    : getSpace(medium);
+  }
+
+  .brand {
+    @extend .sprites-brand;
+    @include inline-block;
+
+    background-size : 100%;
+    height      : $brand-height;
+    text-indent : -9999px;
+    width       : $brand-width;
+
+    @include query($baby-bear) {
+      height : $brand-height * 0.75;
+      width  : $brand-width * 0.75;
+    }
+  }
+}

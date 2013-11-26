@@ -18,18 +18,25 @@
 
   <body ng-app="amatistadigitalApp" ng-controller="MainCtrl as main">
 
-    <!-- Navigation -->
+    <!-- Navigation. -->
     <ul class="page-navigation">
       <li class="navigation-item" ng-repeat="section in main.sections" ng-class="{ active : main.activeSection === section.id }" scroll-to="{{ section.id }}" scroll-duration="1000">
         <img ng-src="images/section-icons/{{ section.id }}.png" />
       </li>
     </ul>
 
+    <!-- Header. -->
+    <header class="page-header">
+      <div class="container">
+        <h1 class="brand">Amatista Digital</h1>
+      </div>
+    </header>
+
     <!-- Sections. -->
     <content-area ng-repeat="section in main.sections" name="section.id" on-visible="main.activeSection = section.id" on-visible-trigger="topWindow"></content-area>
 
     <!-- Page footer. -->
-    <footer class="footer">
+    <footer class="page-footer">
       <div class="container">
 
         <div class="brand">Amatista Digital</div>
