@@ -20,17 +20,5 @@ angular.module('amatistadigitalApp').controller 'MainCtrl', ($location, $anchorS
   # Set active section as first sections item.
   @activeSection = @sections[0].id
 
-  # Scroll to a given section.
-  @scrollToSection = (section) ->
-    $location.hash section
-    $anchorScroll()
-
-  # Change active section.
-  @changeActiveSection = (section) =>
-
-    # Change active section flag.
-    @activeSection = section
-
-
   # Return controller API.
   return @
