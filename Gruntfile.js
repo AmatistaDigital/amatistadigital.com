@@ -20,6 +20,7 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: {
+      name : require('./bower.json').name + 'App',
       // configurable paths
       app: require('./bower.json').appPath || 'app',
       dist: 'dist'
@@ -258,7 +259,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'templates/**/*.html'],
+          src: ['*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -380,6 +381,20 @@ module.exports = function (grunt) {
       },
       src: [ '**/*' ]
     },
+
+    // Inline Angular templates.
+    ngtemplates: {
+      dist : {
+        cwd     : '<%= yeoman.app %>',
+        src     : 'templates/**/*.html',
+        dest    : '.tmp/scripts/templateCache.js',
+        options : {
+          base   : '<%= yeoman.app %>',
+          concat : 'generated',
+          module : '<%= yeoman.name %>'
+        }
+      }
+    }
   });
 
 
@@ -415,6 +430,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'ngtemplates:dist',
     'concat',
     'ngmin',
     'copy:dist',
