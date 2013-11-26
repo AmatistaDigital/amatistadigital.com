@@ -1,8 +1,11 @@
 .our-powers {
   @include box-shadow(inset rgba(0, 0, 0, .2) 0 25px 25px);
   @extend %background-clouds;
-  border-top  : 2px solid lighten(getColor(clouds), 5%);
-  padding-top : 120px;
+  border-top : 2px solid lighten(getColor(clouds), 5%);
+
+  @include query($up-mama-bear) {
+    padding-top : 120px;
+  }
 
   .powers-list {
     @extend %background-orange;

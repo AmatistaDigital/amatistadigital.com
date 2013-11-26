@@ -16,10 +16,17 @@
 
 .intro {
   @extend %padding-vertical-titan;
-  @extend %text-huge;
 
   overflow : hidden;
   position : relative;
+
+  @include query($up-baby-bear) {
+    font-size : getFontSize(large);
+  }
+
+  @include query($up-mama-bear) {
+    font-size : getFontSize(huge);
+  }
 
   .intro-bg-container,
   .intro-bg {

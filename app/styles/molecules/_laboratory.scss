@@ -1,7 +1,10 @@
 .laboratory {
   @include box-shadow(inset rgba(0, 0, 0, .5) 0 0 50px);
   background     : getColor(grapes) url(../images/backgrounds/laboratory.png) no-repeat center 10px;
-  padding-bottom : 475px;
+
+  @include query($up-brother-bear) {
+    padding-bottom : 475px;
+  }
 
   .section-description {
     @extend %margin-bottom-huge;

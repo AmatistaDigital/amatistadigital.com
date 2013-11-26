@@ -1,5 +1,11 @@
 .container {
   @extend %clearfix;
   margin    : 0 auto;
-  width     : 1020px;
+  max-width : 1020px;
+
+  // Add a lateral padding when the container is big.
+  @include query($papa-bear) {
+    padding-left  : getSpace(medium);
+    padding-right : getSpace(medium);
+  }
 }

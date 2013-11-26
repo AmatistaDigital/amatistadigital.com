@@ -1,0 +1,8 @@
+// Media query mixin.
+@mixin query($breakpoint) {
+
+  // W3C.
+  @media screen and #{$breakpoint} {
+    @content;
+  }
+}

@@ -8,11 +8,13 @@ $process-end-width  : 247px;
 .creative-process {
   @extend %background-water;
   @include box-shadow(inset rgba(0, 0, 0, .2) 0 25px 25px);
+  border-top : 2px solid lighten(getColor(water), 10%);
 
-  border-top     : 2px solid lighten(getColor(water), 10%);
-  height         : $process-height - $process-outer;
-  padding-bottom : 0;
-  position       : relative;
+  @include query($up-mama-bear) {
+    height         : $process-height - $process-outer;
+    padding-bottom : 0;
+    position       : relative;
+  }
 
   .section-title {
     @extend %background-water;
@@ -23,15 +25,17 @@ $process-end-width  : 247px;
   .process {
     @include box-sizing(border-box);
 
-    background  : url(../images/backgrounds/creative-process.png) no-repeat top center;
-    height      : $process-height;
-    left        : 50%;
-    margin-left : ($process-width / 2) * -1;
-    padding-top : 240px;
-    padding-bottom : 0;
-    position    : absolute;
-    top         : -($process-outer);
-    width       : $process-width;
+    @include query($up-mama-bear) {
+      background  : url(../images/backgrounds/creative-process.png) no-repeat top center;
+      height      : $process-height;
+      left        : 50%;
+      margin-left : ($process-width / 2) * -1;
+      padding-top : 240px;
+      padding-bottom : 0;
+      position    : absolute;
+      top         : -($process-outer);
+      width       : $process-width;
+    }
 
     .process-end {
       @include opacity(0);
@@ -42,6 +46,11 @@ $process-end-width  : 247px;
       margin-left : -($process-end-width / 2);
       position    : absolute;
 
+      // Hide element when path isn't shown.
+      @include query($mama-bear) {
+        display : none;
+      }
+
       &.visible {
         @include opacity(1);
         @include transform(rotateZ(-360deg));
@@ -49,17 +58,44 @@ $process-end-width  : 247px;
     }
 
     .process-item {
+      @include display-box;
+      @include box-orient(vertical);
+      @include box-align(center);
+
       @extend %text-left;
       @extend %margin-bottom-large;
 
-      &.inverse {
-        @extend %text-right;
+      // Special display on breakpoint.
+      @include query($up-mama-bear) {
+
+        // Big spaced item.
+        &.big {
+          margin : 85px 0;
+        }
+
+        // Inverse item.
+        &.inverse {
+          text-align : right;
+
+          .process-logo {
+            @include box-ordinal-group(2);
+            margin-right : 0;
+          }
+
+          .process-info {
+            margin-right : getSpace(xx-large);
+          }
+        }
       }
 
-      &.big {
-        margin : 85px 0;
+      // Make process logo and process info initially hidden.
+      .process-logo,
+      .process-info {
+        @include opacity(0);
       }
 
+      // Make process logo and process info visible when item
+      // appear on viewport.
       &.visible {
         .process-logo, .process-info {
           @include opacity(1);
@@ -70,28 +106,26 @@ $process-end-width  : 247px;
         }
       }
 
-      .process-logo,
-      .process-info {
-        @include inline-block;
-        @include opacity(0);
-      }
-
-      &:not(.inverse) .process-logo,
-      &.inverse .process-info {
-        @extend %margin-right-xx-large;
-      }
-
       .process-logo {
+        @extend %margin-right-xx-large;
         @include transition(opacity 0.5s ease, -webkit-transform 1s ease);
+        min-width : 151px;
+
+        @include query($baby-bear) {
+          display : none;
+        }
       }
+
 
       .process-info {
         @include transition(opacity 0.5s ease 0.3s);
-        max-width : 500px;
 
         p {
           @extend %text-deep-sea;
-          @extend %text-large;
+
+          @include query($up-baby-bear) {
+            font-size : getFontSize(large);
+          }
         }
       }
     }

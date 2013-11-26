@@ -4,7 +4,7 @@
 
     <section class="process">
       <article class="process-item" on-visible="item.visible = true" on-visible-trigger="middle" ng-repeat="item in creativeProcess.list" ng-class="{ inverse : item.inverse, big : item.big, visible : item.visible }">
-        <figure class="process-logo" ng-hide="item.inverse">
+        <figure class="process-logo">
           <img alt="{{ item.name }}" ng-src="images/creative-process/{{ item.image }}.png" />
         </figure>
 
@@ -12,10 +12,6 @@
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
         </div>
-
-        <figure class="process-logo" ng-show="item.inverse">
-          <img src="" alt="{{ item.name }}" ng-src="images/creative-process/{{ item.image }}.png" />
-        </figure>
       </article>
 
       <img src="images/creative-process/end.png" alt="Proceso Creativo" class="process-end" on-visible="creativeProcess.end = true" ng-class="{ visible : creativeProcess.end }">

@@ -1,0 +1,11 @@
+// Turn responsive on or off.
+$allow-responsive : false;
+
+// Breakpoints list.
+$papa-bear       : "(max-width : 1020px)";
+$up-mama-bear    : "(min-width : 900px)";
+$mama-bear       : "(max-width : 900px)";
+$brother-bear    : "(max-width : 740px)";
+$up-brother-bear : "(min-width : 740px)";
+$up-baby-bear    : "(min-width : 500px)";
+$baby-bear       : "(max-width : 500px)";

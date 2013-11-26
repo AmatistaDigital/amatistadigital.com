@@ -7,18 +7,20 @@
 // Configuration files such as breakpoints definitions and theme variables.
 // @import "config/breakpoints";
 @import "config/variables";
+@import "config/breakpoints";
 // [End configuration]
 
 // Utilities.
 // ----------
 // Global classes, mixins and styles that can be used anywhere and at any time.
+@import "utilities/functions";
+@import "utilities/mixins";
 @import "utilities/borders";
 @import "utilities/clearfix";
 @import "utilities/colors";
 @import "utilities/container";
 @import "utilities/lists";
 @import "utilities/fonts";
-@import "utilities/functions";
 @import "utilities/spacing";
 @import "utilities/sprites";
 @import "utilities/text";

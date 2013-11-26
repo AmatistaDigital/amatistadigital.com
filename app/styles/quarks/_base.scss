@@ -3,16 +3,10 @@ body {
   position : relative;
 }
 
-html {
-  overflow   : hidden;
-  overflow-y : scroll;
-}
-
 body {
   @extend %background-white;
   @extend %text-white;
   @extend %text-medium;
 
   font-family : $primary-font;
-  overflow-y  : visible;
 }

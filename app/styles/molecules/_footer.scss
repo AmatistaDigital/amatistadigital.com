@@ -1,17 +1,20 @@
 .footer {
   @include box-sizing(border-box);
-  @extend %padding-top-huge;
+  @extend %padding-vertical-large;
 
-  background      : url(../images/backgrounds/footer.png);
-  background-size : 100% 100%;
-  bottom          : 0;
-  height          : 417px;
-  position        : absolute;
-  width           : 100%;
+  @include query($up-brother-bear) {
+    background      : url(../images/backgrounds/footer.png);
+    background-size : 100% 100%;
+    bottom          : 0;
+    height          : 417px;
+    padding-top     : getSpace(huge);
+    position        : absolute;
+    width           : 100%;
 
-  .container {
-    position : relative;
-    height   : 100%;
+    .container {
+      position : relative;
+      height   : 100%;
+    }
   }
 
   .disclaimer {
@@ -19,16 +22,29 @@
     @extend %text-small;
     @extend %text-asphalt;
 
-    bottom   : 15px;
-    position : absolute;
-    width    : 100%;
+    @include query($up-brother-bear) {
+      bottom   : 15px;
+      position : absolute;
+      width    : 100%;
+    }
   }
 
   .brand {
+    $brand-height : 129px;
+    $brand-width  : 309px;
+
     @extend .sprites-brand;
-    height      : 129px;
+    height      : $brand-height;
     text-indent : -9999px;
-    width       : 309px;
+    width       : $brand-width;
+
+    // Center when brother bear.
+    @include query($brother-bear) {
+      background-size : 100%;
+      height          : $brand-height / 2;
+      margin          : 0 auto;
+      width           : $brand-width / 2;
+    }
   }
 
   .contact {
@@ -38,6 +54,15 @@
     position   : absolute;
     right      : 0;
     width      : 390px;
+
+    @include query($papa-bear) {
+      right : getSpace(medium);
+    }
+
+    // Hide when device is small.
+    @include query($brother-bear) {
+      display : none;
+    }
 
     .contact-info {
       @extend %background-orange;
