@@ -17,7 +17,6 @@
   <body ng-app="amatistadigitalApp" ng-controller="MainCtrl as main">
 
     <!-- Sections. -->
-    <span style="color: black">{{ main.activeSection }}</span>
     <content-area ng-repeat="section in main.sections" name="section" on-visible="main.changeActiveSection(section)" on-visible-trigger="topWindow"></content-area>
 
     <script src="bower_components/angular/angular.js"></script>
