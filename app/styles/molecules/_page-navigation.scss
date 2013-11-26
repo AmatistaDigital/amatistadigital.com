@@ -1,0 +1,50 @@
+.page-navigation {
+  @include box-shadow(rgba(0, 0, 0, .5) 0 0 5px);
+  position : fixed;
+  right    : getSpace(medium);
+  top      : 100px;
+  z-index  : 10;
+
+  // Hide when small screen.
+  @include query($baby-bear) {
+    display : none;
+  }
+
+  .navigation-item {
+    @extend %background-clouds;
+    @extend %padding-lateral-medium;
+    @extend %padding-vertical-small;
+
+    display : block;
+    cursor  : pointer;
+
+    // Add a border at the bottom of every
+    // item except the last one.
+    &:not(:last-child) {
+      border-bottom : 2px solid getColor(asphalt);
+    }
+
+    // Add a rounded border to first and last items.
+    &:first-child {
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
+    }
+
+    &:last-child {
+      @include border-bottom-left-radius(5px);
+      @include border-bottom-right-radius(5px);
+    }
+
+    // Active item (also hover effect).
+    &:hover,
+    &.active {
+      @extend %background-orange;
+    }
+
+    // Image.
+    img {
+      height : 26px;
+      width  : 31px;
+    }
+  }
+}

@@ -18,8 +18,51 @@
 
   <body ng-app="amatistadigitalApp" ng-controller="MainCtrl as main">
 
+    <!-- Navigation -->
+    <ul class="page-navigation">
+      <li class="navigation-item" ng-repeat="section in main.sections" ng-class="{ active : main.activeSection === section.id }" ng-click="main.scrollToSection(section.id)">
+        <img ng-src="images/section-icons/{{ section.id }}.png" />
+      </li>
+    </ul>
+
     <!-- Sections. -->
-    <content-area ng-repeat="section in main.sections" name="section" on-visible="main.changeActiveSection(section)" on-visible-trigger="topWindow"></content-area>
+    <content-area ng-repeat="section in main.sections" name="section.id" on-visible="main.changeActiveSection(section.id)" on-visible-trigger="topWindow"></content-area>
+
+    <!-- Page footer. -->
+    <footer class="footer">
+      <div class="container">
+
+        <div class="brand">Amatista Digital</div>
+        <div class="contact">
+
+          <div class="contact-info">
+            <h4 class="contact-title">Amatista Digital S.A.</h4>
+
+            <table class="contact-data">
+              <tr>
+                <td>Email:</td>
+                <td>info@amatistadigital.com</td>
+              </tr>
+              <tr>
+                <td>Teléfono:</td>
+                <td>(+506) 8888-8888</td>
+              </tr>
+              <tr>
+                <td>Ubicación:</td>
+                <td>San José, Costa Rica</td>
+              </tr>
+            </table>
+
+            <a href="mailto:info@amatistadigital.com" class="btn btn-primary">Contáctenos</a>
+            <a href="http://www.facebook.com/amatistadigitalcr" target="_blank" class="btn btn-facebook"><div class="icon"></div></a>
+            <a href="http://twitter.com" target="_blank" class="btn btn-twitter"><div class="icon"></div></a>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="disclaimer">&copy;2013 Amatista Digital S.A. | San José, Costa Rica | info@amatistadigital.com</p>
+    </footer>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="bower_components/angular/angular.js"></script>

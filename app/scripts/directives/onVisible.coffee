@@ -13,7 +13,7 @@ angular.module('amatistadigitalApp').directive 'onVisible', ->
       visible = null
 
       switch attrs.onVisibleTrigger
-        when 'topWindow' then visible = rect.top <= 0 and rect.bottom >= 0
+        when 'topWindow' then visible = (rect.top - 50) <= 0 and (rect.bottom - 50) >= 0
         else visible = (rect.top + heightPortion) <= window.innerHeight
 
       scope.$apply attrs.onVisible if visible
