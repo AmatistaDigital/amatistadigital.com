@@ -39,7 +39,7 @@ $process-end-width  : 247px;
 
     .process-end {
       @include opacity(0);
-      @include transition(opacity 0.75s ease, -webkit-transform 1s ease);
+      @include transition(opacity 0.75s ease, transform 1s ease);
 
       bottom      : -($process-end-height / 2);
       left        : 50%;
@@ -108,7 +108,7 @@ $process-end-width  : 247px;
 
       .process-logo {
         @extend %margin-right-xx-large;
-        @include transition(opacity 0.5s ease, -webkit-transform 1s ease);
+        @include transition(opacity 0.5s ease, transform 1s ease);
         min-width : 151px;
 
         @include query($baby-bear) {

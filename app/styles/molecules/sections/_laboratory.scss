@@ -37,7 +37,7 @@
 
       .small,
       .big {
-        @include transition(-webkit-transform 1.5s ease);
+        @include transition(transform 1.5s ease);
         position : absolute;
       }
 
