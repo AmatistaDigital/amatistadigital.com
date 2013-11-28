@@ -59,7 +59,7 @@ $process-end-width  : 247px;
 
     .process-item {
       @include display-box;
-      @include box-orient(vertical);
+      @include box-orient(horizontal);
       @include box-align(center);
 
       @extend %text-left;
@@ -108,7 +108,10 @@ $process-end-width  : 247px;
 
       .process-logo {
         @extend %margin-right-xx-large;
+
         @include transition(opacity 0.5s ease, transform 1s ease);
+        @include box-flex(1);
+
         min-width : 151px;
 
         @include query($baby-bear) {
@@ -118,6 +121,7 @@ $process-end-width  : 247px;
 
 
       .process-info {
+        @include box-flex(4);
         @include transition(opacity 0.5s ease 0.3s);
 
         p {
