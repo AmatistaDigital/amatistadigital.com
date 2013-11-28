@@ -9,12 +9,12 @@ angular.module('amatistadigitalApp').directive 'scrollTo', ->
 
       return false if duration < 0
 
-      difference = dest.offsetTop - document.body.scrollTop
+      difference = dest.offsetTop - self.pageYOffset
       step       = difference / duration * 10
 
       setTimeout ->
-        position = document.body.scrollTop + step
-        document.body.scrollTop = position if position >= 0
+        position = self.pageYOffset + step
+        window.scrollTo 0, position if position >= 0
         scrollTo dest, duration - 10
 
     # Scroll to the element on click.
